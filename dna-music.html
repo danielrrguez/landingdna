@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Music | Inicia tu carrera como DJ y Productor</title>
+    <meta name="description" content="Aprende a ser DJ y Productor Musical profesional. Entra a la industria musical y vive de tu pasión en DNA Music.">
+    
+    <!-- Tipografía Moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           VARIABLES Y RESET
+           ========================================= */
+        :root {
+            /* Colores Base */
+            --bg-color: #080312; /* Fondo morado casi negro */
+            --surface-color: #120822; /* Superficie ligeramente más clara */
+            --surface-light: #1c0c32;
+            
+            /* Acentos Neón */
+            --accent-neon-blue: #00f0ff;
+            --accent-neon-purple: #b026ff;
+            --gradient-primary: linear-gradient(135deg, var(--accent-neon-purple) 0%, var(--accent-neon-blue) 100%);
+            
+            /* Textos */
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3a3;
+            
+            /* Misc */
+            --font-main: 'Outfit', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* =========================================
+           TIPOGRAFÍA GLOBAL
+           ========================================= */
+        h1, h2, h3 {
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* =========================================
+           UTILIDADES Y LAYOUT
+           ========================================= */
+        .section {
+            padding: 5rem 1.5rem;
+            position: relative;
+        }
+
+        .section--dark {
+            background-color: var(--surface-color);
+        }
+
+        .section--light {
+            background-color: #0a0a0a;
+        }
+
+        .section--accent {
+            background: linear-gradient(to bottom, var(--surface-color), #140824);
+        }
+
+        .section--highlight::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%; 
+            transform: translate(-50%, -50%);
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(176, 38, 255, 0.1) 0%, transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Contenedores para anchos máximos */
+        .hero__container, .emotional-story__container, .myth-talent__container, 
+        .myth-money__container, .identification__container, .academy-intro__container, 
+        .roadmap__container, .result-vision__container, .social-proof__container, 
+        .program-features__container, .lead-generation__container, .faq__container, 
+        .footer__cta-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================================
+           BOTONES
+           ========================================= */
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: var(--font-main);
+        }
+
+        .button--primary {
+            background: var(--gradient-primary);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 20px rgba(176, 38, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .button--primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 240, 255, 0.5);
+            background: linear-gradient(135deg, #c55cff 0%, #33f3ff 100%);
+        }
+
+        .button--large {
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        /* =========================================
+           COMPONENTES ESPECÍFICOS
+           ========================================= */
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 8rem 1.5rem 4rem;
+            overflow: hidden;
+            background: url('./hero_bg_wide.png') right 35% / cover no-repeat;
+            background-attachment: fixed; /* Parallax effect */
+        }
+
+        /* Overlay para lectura perfecta del texto */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(8, 3, 18, 0.95) 0%, rgba(8, 3, 18, 0.7) 50%, rgba(8, 3, 18, 0.2) 100%);
+            z-index: 0;
+        }
+
+        .hero__particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero__container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero__content {
+            max-width: 650px;
+            animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes slideUpFade {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero__title {
+            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff 20%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero__title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero__subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 2.5rem;
+            color: #d1d1d1;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .hero__bullets {
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .hero__bullet {
+            position: relative;
+            padding-left: 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            animation: fadeInRight 0.5s forwards;
+        }
+
+        .hero__bullet:nth-child(1) { animation-delay: 0.3s; }
+        .hero__bullet:nth-child(2) { animation-delay: 0.5s; }
+        .hero__bullet:nth-child(3) { animation-delay: 0.7s; }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .hero__bullet-icon {
+            position: absolute;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: rgba(0, 240, 255, 0.1);
+            border-radius: 50%;
+            color: var(--accent-neon-blue);
+            font-size: 0.8rem;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        /* Botón con efecto ripple y glow */
+        .hero__cta {
+            position: relative;
+            overflow: hidden;
+            font-size: 1.2rem;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 800;
+            box-shadow: 0 0 20px rgba(176, 38, 255, 0.4), 0 0 40px rgba(0, 240, 255, 0.2);
+            transition: all 0.4s ease;
+            z-index: 1;
+            display: inline-block;
+        }
+
+        .hero__cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #33f3ff 0%, #c55cff 100%);
+            z-index: -1;
+            transition: opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .hero__cta:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(176, 38, 255, 0.6), 0 0 50px rgba(0, 240, 255, 0.4);
+        }
+
+        .hero__cta:hover::before {
+            opacity: 1;
+        }
+
+        .hero__top-logo {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .hero__top-logo img {
+            width: 120px; /* Tamaño de marca de agua */
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(176, 38, 255, 0.4));
+        }
+
+        .hero__top-logo:hover {
+            opacity: 1;
+        }
+
+        /* =========================================
+           2. STORYTELLING EMOCIONAL
+           ========================================= */
+        .storytelling {
+            position: relative;
+            z-index: 1;
+            background-color: transparent;
+            padding: 8rem 1.5rem;
+        }
+
+        .storytelling__container {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .storytelling__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .storytelling__headline {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .storytelling__headline span {
+            display: block;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .storytelling__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .pain-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 1rem;
+            padding: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .pain-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(168, 85, 247, 0.3);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .pain-card__icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .pain-card p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .storytelling__bridge {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            font-weight: 500;
+            color: #ffffff;
+            line-height: 1.5;
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(145deg, rgba(168, 85, 247, 0.1), rgba(0, 240, 255, 0.05));
+            border-radius: 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .storytelling__bridge span {
+            display: block;
+            margin-top: 0.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        /* =========================================
+           3. LA SOLUCIÓN - PROGRAMA
+           ========================================= */
+        .program {
+            background-color: transparent; /* Seamless dark flow */
+            color: #ffffff;
+            position: relative;
+            padding-bottom: 3rem !important; /* Reduce space */
+        }
+
+        .program::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%; height: 60%;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.05) 0%, transparent 70%);
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+            animation: breatheGlow 6s infinite alternate;
+        }
+
+        .program__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .program__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .program__title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            line-height: 1.1;
+        }
+
+        .program__subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: #cccccc;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .program__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .program__card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .program__card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(168, 85, 247, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .program__card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: rgba(168, 85, 247, 0.1);
+            border-radius: 12px;
+            color: var(--accent-neon-purple);
+        }
+
+        .program__card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .program__card-desc {
+            font-size: 1rem;
+            color: #aaaaaa;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* =========================================
+           3.1 MODALIDADES Y SEDES
+           ========================================= */
+        .modalities {
+            background-color: transparent;
+            color: #ffffff;
+            position: relative;
+            padding-top: 3rem !important; /* Reduce space */
+        }
+
+        .modalities__container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .modalities__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .modalities__content {
+            text-align: center;
+        }
+
+        .modalities__title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #888888;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .modalities__text {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        .modalities__text strong {
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .modalities__highlight {
+            font-size: clamp(1.1rem, 2vw, 1.2rem);
+            color: #888888;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .modalities__media {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .modalities__media::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+            background: radial-gradient(circle, rgba(176, 38, 255, 0.9) 0%, rgba(138, 43, 226, 0.6) 40%, transparent 70%);
+            filter: blur(60px);
+            z-index: 0;
+            pointer-events: none;
+            animation: pulseMapGlow 4s infinite alternate;
+        }
+
+        .modalities__media img {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            mix-blend-mode: screen;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            animation: floatMap 6s ease-in-out infinite;
+        }
+
+        @keyframes floatMap {
+            0% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-15px) scale(1.02); }
+            100% { transform: translateY(0px) scale(1); }
+        }
+
+        @keyframes pulseMapGlow {
+            0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.9); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+        }
+
+        /* =========================================
+           4. AUTORIDAD Y PRUEBA SOCIAL
+           ========================================= */
+        .authority {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .authority__container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .authority__header {
+            max-width: 800px;
+            margin: 0 auto 5rem;
+            text-align: center;
+        }
+
+        .authority__title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 3rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+        }
+
+        .authority__title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .authority__credentials {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .authority__credential-item {
+            background: transparent;
+            padding: 1rem 1.5rem;
+            border-left: 3px solid var(--accent-neon-purple);
+            border-radius: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .authority__credential-item:hover {
+            transform: translateX(5px);
+        }
+
+        .authority__credential-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .authority__credential-item p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .authority__credential-item strong {
+            color: #ffffff;
+            font-weight: 800;
+        }
+
+        .authority__testimonials {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.02);
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.1);
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        .testimonial-card__quote {
+            font-size: 1.15rem;
+            color: #eeeeee;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial-card__quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(168, 85, 247, 0.2);
+            position: absolute;
+            top: -2.5rem;
+            left: -1rem;
+            font-family: serif;
+            font-weight: 900;
+        }
+
+        .testimonial-card__author strong {
+            display: block;
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 0.2rem;
+        }
+
+        .testimonial-card__author span {
+            font-size: 0.85rem;
+            color: #aaaaaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .authority__stats {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            text-align: center;
+            padding: 4rem 0 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: clamp(4rem, 10vw, 7rem);
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 800;
+            color: var(--accent-neon-purple);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* =========================================
+           5. DESTRUCCIÓN DE OBJECIONES (FAQ)
+           ========================================= */
+        .faq {
+            background-color: transparent;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .faq__container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faq__header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq__title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .faq__title span {
+            color: var(--accent-neon-purple);
+            display: block;
+        }
+
+        .faq__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .faq__card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq__card:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(168, 85, 247, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.05);
+        }
+
+        .faq__icon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            background: rgba(255,255,255,0.05);
+            padding: 1rem;
+            border-radius: 50%;
+        }
+
+        .faq__question {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+
+        .faq__answer {
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           GLOBAL GLOWS & FORMULARIO
+           ========================================= */
+        .ambient-glow {
+            position: absolute;
+            width: 70vw;
+            height: 70vw;
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
+            filter: blur(120px);
+            opacity: 0.6;
+            animation: driftGlow 15s infinite alternate ease-in-out;
+        }
+
+        @keyframes driftGlow {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5%, 5%) scale(1.1); }
+            100% { transform: translate(-5%, -5%) scale(0.9); }
+        }
+
+        @keyframes breatheGlow {
+            0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.9); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        .lead-form {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .lead-form__container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lead-form__container::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+            filter: blur(60px);
+            z-index: -1;
+            pointer-events: none;
+            animation: breatheGlow 8s infinite alternate-reverse;
+        }
+
+        .lead-form__content {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .lead-form__title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 3rem;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .lead-form__title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form__group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form__label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #dddddd;
+            margin-bottom: 0.5rem;
+        }
+
+        .form__input {
+            width: 100%;
+            padding: 1.2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-family: inherit;
+            color: #ffffff;
+            background: rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .form__input:focus {
+            outline: none;
+            border-color: #a855f7;
+            background: rgba(0,0,0,0.5);
+            box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.2);
+        }
+
+        .form__scarcity {
+            font-size: 1rem;
+            color: #f59e0b; /* Amber */
+            font-weight: 600;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .form__submit {
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .form__trust {
+            font-size: 0.9rem;
+            color: #888888;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .form-success {
+            text-align: center;
+            padding: 3rem 1rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .form-success__icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-success__title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .form-success__text {
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            line-height: 1.6;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =========================================
+           7. FOOTER & SOCIALS
+           ========================================= */
+        .footer {
+            background-color: #05010a;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 4rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer__text {
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .footer__socials {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            color: #aaaaaa;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .social-btn svg {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-btn:hover {
+            color: #ffffff;
+            transform: translateY(-5px);
+            border-color: transparent;
+            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.2);
+        }
+
+        .social-btn:hover::before {
+            opacity: 1;
+        }
+
+        .social-btn:hover svg {
+            transform: scale(1.1);
+        }
+
+        .footer__copyright {
+            font-size: 0.9rem;
+            color: #666666;
+            margin-top: 1rem;
+        }
+
+        /* =========================================
+           SCROLL ANIMATIONS
+           ========================================= */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: opacity, transform;
+        }
+
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================================
+           MEDIA QUERIES (TABLET & DESKTOP)
+           ========================================= */
+        @media (min-width: 768px) {
+            .section { padding: 8rem 2rem; }
+            
+            .button--large { width: auto; }
+
+            .storytelling__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .program__grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .modalities__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .modalities__content {
+                text-align: left;
+            }
+
+            .authority__credentials {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .authority__testimonials {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .authority__stats {
+                flex-direction: row;
+                justify-content: space-around;
+                gap: 0;
+            }
+
+            .faq__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .faq__card--wide {
+                grid-column: span 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .faq__card--wide .faq__answer {
+                max-width: 800px;
+            }
+
+            .lead-form__content {
+                padding: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HERO -->
+    <header class="hero" id="hero-section">
+        <div class="hero__top-logo" style="animation: fadeIn 1s ease forwards;">
+            <img src="./logo.png" alt="DNA Music Logo">
+        </div>
+        <canvas id="particles-canvas" class="hero__particles"></canvas>
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">No escuches la música, <br><span>haz que el mundo la escuche</span></h1>
+                <p class="hero__subtitle">Conviértete en DJ o productor desde cero</p>
+                
+                <ul class="hero__bullets">
+                    <li class="hero__bullet">
+                        <span class="hero__bullet-icon">✓</span>
+                        Empieza sin experiencia
+                    </li>
+                    <li class="hero__bullet">
+                        <span class="hero__bullet-icon">✓</span>
+                        Aprende con equipos reales
+                    </li>
+                    <li class="hero__bullet">
+                        <span class="hero__bullet-icon">✓</span>
+                        Conecta con la industria
+                    </li>
+                </ul>
+                
+                <a href="#lead-form" class="hero__cta">Quiero iniciar mi carrera</a>
+            </div>
+        </div>
+    </header>
+
+    <main style="position: relative; overflow: hidden;">
+        <!-- Luces Ambientales (Nebulosas) -->
+        <div class="ambient-glow" style="top: 15%; left: -20%; background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 60%);"></div>
+        <div class="ambient-glow" style="top: 45%; right: -20%; background: radial-gradient(circle, rgba(0, 240, 255, 0.05) 0%, transparent 60%);"></div>
+        <div class="ambient-glow" style="top: 75%; left: -10%; background: radial-gradient(circle, rgba(176, 38, 255, 0.06) 0%, transparent 60%);"></div>
+        <!-- 2. IDENTIFICACIÓN DEL DOLOR -->
+        <section class="section storytelling">
+            <div class="storytelling__container">
+                <div class="storytelling__header">
+                    <h2 class="storytelling__headline fade-in-up">Sabemos exactamente <br><span>en qué punto estás.</span></h2>
+                </div>
+                
+                <div class="storytelling__grid">
+                    <div class="pain-card">
+                        <div class="pain-card__icon">⏳</div>
+                        <p>Llevas tiempo queriendo aprender y sigues esperando el momento perfecto que nunca llega.</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-card__icon">📺</div>
+                        <p>Has intentado con tutoriales de YouTube pero sientes que no avanzas de forma estructurada.</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-card__icon">🎛️</div>
+                        <p>Crees que necesitas equipos carísimos para empezar — y eso te ha frenado.</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-card__icon">💭</div>
+                        <p>No sabes si esto puede convertirse en algo real, en una carrera, en ingresos.</p>
+                    </div>
+                </div>
+                
+                <div class="storytelling__bridge fade-in-up">
+                    <p>Si alguno de esos puntos te describe, estás exactamente donde debes estar.</p>
+                    <span>DNA Music existe para convertir eso en una carrera.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. LA SOLUCIÓN - EL PROGRAMA -->
+        <section class="section program">
+            <div class="program__container">
+                <div class="program__header">
+                    <h2 class="program__title">Formación Profesional</h2>
+                    <p class="program__subtitle">Formación completa en mezcla, performance y producción musical — desde cero hasta nivel profesional — con los equipos y el respaldo que la industria exige.</p>
+                </div>
+
+                <div class="program__grid">
+                    <div class="program__card">
+                        <div class="program__card-icon">🎧</div>
+                        <h3 class="program__card-title">Equipos profesionales incluidos.</h3>
+                        <p class="program__card-desc">Pioneer, Serato, Ableton. Sin que tengas que comprar nada.</p>
+                    </div>
+                    <div class="program__card">
+                        <div class="program__card-icon">⏱️</div>
+                        <h3 class="program__card-title">Práctica ilimitada.</h3>
+                        <p class="program__card-desc">Accede a las cabinas y estudios todo el tiempo que necesites.</p>
+                    </div>
+                    <div class="program__card">
+                        <div class="program__card-icon">🌎</div>
+                        <h3 class="program__card-title">Inglés para la industria gratis.</h3>
+                        <p class="program__card-desc">Porque la música no tiene fronteras y tú tampoco deberías tenerlas.</p>
+                    </div>
+                    <div class="program__card">
+                        <div class="program__card-icon">📜</div>
+                        <h3 class="program__card-title">Certificación internacional.</h3>
+                        <p class="program__card-desc">Avalada por Serato, Ableton, AVID y Native Instruments.</p>
+                    </div>
+                    <div class="program__card">
+                        <div class="program__card-icon">🤝</div>
+                        <h3 class="program__card-title">Conexión con la industria.</h3>
+                        <p class="program__card-desc">Eventos, festivales y red de egresados activos en la escena.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 4rem;">
+                    <a href="#lead-form" class="hero__cta">Quiero iniciar mi carrera</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3.1 MODALIDADES Y SEDES -->
+        <section class="section modalities">
+            <div class="modalities__container">
+                <div class="modalities__grid">
+                    <div class="modalities__content">
+                        <h2 class="modalities__title">Modalidades y Sedes</h2>
+                        <p class="modalities__text">Presencial en <strong>Bogotá, Medellín, Cali, Barranquilla y Pereira</strong>. Híbrido o 100% virtual desde donde estés.</p>
+                        <p class="modalities__highlight">Tú eliges cómo aprender — nosotros nos adaptamos.</p>
+                    </div>
+                    <div class="modalities__media">
+                        <img src="./mapa.png" alt="Mapa de sedes en Colombia">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. AUTORIDAD Y PRUEBA SOCIAL -->
+        <section class="section authority">
+            <div class="authority__container">
+                <div class="authority__header">
+                    <h2 class="authority__title">No somos una academia más. <span>Y los números lo demuestran.</span></h2>
+                    
+                    <div class="authority__credentials">
+                        <div class="authority__credential-item">
+                            <div class="authority__credential-icon">🏆</div>
+                            <p><strong>DNA Music es la única academia en Colombia</strong> certificada por los cuatro softwares líderes de la industria musical mundial: Serato, Ableton Live, AVID Pro Tools y Native Instruments. Eso no lo tiene nadie más en el país.</p>
+                        </div>
+                        <div class="authority__credential-item">
+                            <div class="authority__credential-icon">🏛️</div>
+                            <p><strong>Programas técnicos laborales</strong> avalados por la Secretaría de Educación. Tu título tiene respaldo oficial.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="authority__testimonials">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__quote">"Antes tocaba en fiestas de amigos sin saber bien lo que hacía. Hoy tengo residencia en dos clubes de Bogotá y produzco para otros artistas. DNA me dio la estructura que necesitaba."</div>
+                        <div class="testimonial-card__author">
+                            <strong>Daniel</strong>
+                            <span>Egresado Bogotá · DJ Residente</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__quote">"Yo pensaba que producir música requería un equipo carísimo e inalcanzable. Empecé de cero, y gracias a la práctica en los estudios de la academia, acabo de firmar mi primer track con un sello europeo."</div>
+                        <div class="testimonial-card__author">
+                            <strong>Karen</strong>
+                            <span>Egresada Medellín · Productora</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__quote">"Lo mejor de la academia no fueron solo las clases, sino las conexiones. Gracias a los eventos conocí a otros artistas y promotores. Hoy estoy viviendo 100% de la música."</div>
+                        <div class="testimonial-card__author">
+                            <strong>David</strong>
+                            <span>Egresado Cali · DJ & Productor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="authority__stats">
+                    <div class="stat-item">
+                        <span class="stat-number">+15.000</span>
+                        <span class="stat-label">EGRESADOS</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">19 AÑOS</span>
+                        <span class="stat-label">LIDERANDO</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. DESTRUCCIÓN DE OBJECIONES (FAQ) -->
+        <section class="section faq">
+            <div class="faq__container">
+                <div class="faq__header">
+                    <h2 class="faq__title">Resolvemos las dudas <span>antes de que las tengas.</span></h2>
+                </div>
+                
+                <div class="faq__grid">
+                    <div class="faq__card">
+                        <div class="faq__icon">🤔</div>
+                        <h3 class="faq__question">"¿Necesito saber música o tener experiencia previa?"</h3>
+                        <p class="faq__answer">No. El programa está diseñado para empezar desde cero absoluto. Lo único que necesitas es querer aprender — nosotros ponemos todo lo demás.</p>
+                    </div>
+
+                    <div class="faq__card">
+                        <div class="faq__icon">💻</div>
+                        <h3 class="faq__question">"¿Tengo que comprar equipos o software?"</h3>
+                        <p class="faq__answer">Para nada. DNA Music provee todo el equipo profesional — tornamesas, controladores, monitores, software — durante toda tu formación. Sin inversión adicional.</p>
+                    </div>
+
+                    <div class="faq__card">
+                        <div class="faq__icon">⏱️</div>
+                        <h3 class="faq__question">"¿Y si trabajo o estudio y no tengo mucho tiempo?"</h3>
+                        <p class="faq__answer">Para eso existe la modalidad híbrida y virtual. Estudia en los horarios que se acomoden a tu vida — de lunes a jueves, intensivo, o sábados. Tú defines el ritmo.</p>
+                    </div>
+
+                    <div class="faq__card">
+                        <div class="faq__icon">💳</div>
+                        <h3 class="faq__question">"¿Es muy costoso para mí en este momento?"</h3>
+                        <p class="faq__answer">Desde $287.000 al mes con 9 formas de pago distintas — tarjeta, PSE, efectivo, financiación con Sufi, Addi y Sistecrédito. Si tienes cesantías, también puedes usarlas. Y si tu situación lo requiere, tenemos Modalidad Solidaria.</p>
+                    </div>
+
+                    <div class="faq__card faq__card--wide">
+                        <div class="faq__icon">🚀</div>
+                        <h3 class="faq__question">"¿Ser DJ o productor es una carrera real en Colombia?"</h3>
+                        <p class="faq__answer">Los artistas que lideran la escena musical colombiana — y que llenan festivales internacionales — empezaron igual que tú. La diferencia fue que tomaron la decisión. La industria existe, crece y necesita profesionales formados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FORMULARIO - LEAD CAPTURE -->
+        <section id="lead-form" class="section lead-form">
+            <div class="lead-form__container">
+                <div class="lead-form__content">
+                    <h2 class="lead-form__title">Da el primer paso hoy. <br><span>Un asesor te contacta en menos de 24 horas.</span></h2>
+                    
+                    <form id="leadForm" class="form" action="#" method="POST">
+                        <div class="form__group">
+                            <label for="name" class="form__label">Nombre completo</label>
+                            <input type="text" id="name" class="form__input" placeholder="Tu nombre y apellido" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="whatsapp" class="form__label">Número de WhatsApp</label>
+                            <input type="tel" id="whatsapp" class="form__input" placeholder="Tu número de WhatsApp" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="city" class="form__label">Ciudad o modalidad de interés</label>
+                            <input type="text" id="city" class="form__input" placeholder="Ej: Bogotá, Medellín, Virtual" required>
+                        </div>
+
+                        <p class="form__scarcity">⏳ Los grupos tienen cupos limitados. Asegura el tuyo antes de que se llene.</p>
+                        
+                        <button type="submit" class="button button--large form__submit">Quiero que me contacten →</button>
+                        
+                        <p class="form__trust">🔒 Sin compromisos. Solo información. Te escribimos por WhatsApp.</p>
+                    </form>
+
+                    <div id="formSuccess" class="form-success" style="display: none;">
+                        <div class="form-success__icon">✅</div>
+                        <h3 class="form-success__title">¡Registro completado!</h3>
+                        <p class="form-success__text">Tus datos han sido recibidos de forma segura. Uno de nuestros asesores te contactará por WhatsApp muy pronto para darte toda la información.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. FOOTER -->
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__text fade-in-up">Síguenos en nuestras redes sociales</p>
+            <div class="footer__socials fade-in-up">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/dnamusicdj/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/DNAMusicDJ/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@dnamusicdj" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+                </a>
+            </div>
+            <p class="footer__copyright fade-in-up">&copy; 2026 DNA Music. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Manejo del formulario
+        const leadForm = document.getElementById('leadForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        if(leadForm) {
+            leadForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Evita que la página se recargue
+                
+                // Aquí es donde en el futuro puedes agregar la conexión a Google Sheets o un CRM
+                
+                // Ocultar formulario con transición y mostrar mensaje de éxito
+                leadForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+            });
+        }
+
+        // Animación de partículas del Hero
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        const heroSection = document.getElementById('hero-section');
+        
+        let width, height;
+        let particles = [];
+        
+        // Configuración
+        const particleCount = 80;
+        const colors = ['rgba(168, 85, 247, 0.8)', 'rgba(0, 240, 255, 0.8)', 'rgba(255, 255, 255, 0.6)'];
+        
+        // Interacción con mouse
+        let mouse = { x: null, y: null };
+        document.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+
+        document.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        function init() {
+            width = canvas.width = heroSection.offsetWidth;
+            height = canvas.height = heroSection.offsetHeight;
+            
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * -1.5 - 0.5; // Flotan hacia arriba como luz
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.originalSpeedX = this.speedX;
+                this.originalSpeedY = this.speedY;
+            }
+            
+            update() {
+                // Interacción de repelencia suave con el mouse
+                if (mouse.x != null && mouse.y != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 150) {
+                        // Repeler suavemente
+                        this.speedX -= dx * 0.0003;
+                        this.speedY -= dy * 0.0003;
+                    }
+                }
+                
+                this.x += this.speedX;
+                this.y += this.speedY;
+                
+                // Retornar gradualmente a su velocidad original
+                this.speedX += (this.originalSpeedX - this.speedX) * 0.02;
+                this.speedY += (this.originalSpeedY - this.speedY) * 0.02;
+                
+                // Efecto de flujo continuo desde abajo hacia arriba
+                if (this.y < 0 - this.size) {
+                    this.y = height + this.size;
+                    this.x = Math.random() * width;
+                    this.speedX = this.originalSpeedX;
+                    this.speedY = this.originalSpeedY;
+                }
+                if (this.x < 0 || this.x > width) {
+                    this.speedX *= -1;
+                }
+            }
+            
+            draw() {
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                
+                // Glow effect solo para particulas mas grandes para optimizar
+                if (this.size > 1.5) {
+                    ctx.shadowBlur = 10;
+                    ctx.shadowColor = this.color;
+                }
+                
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+        
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        
+        window.addEventListener('resize', init);
+        
+        // Iniciar
+        init();
+        animate();
+        // ==========================================
+        // ANIMACIONES AL HACER SCROLL (Intersection Observer)
+        // ==========================================
+        
+        // 1. Seleccionar los elementos que queremos animar
+        const elementsToAnimate = document.querySelectorAll(`
+            .storytelling__headline, .pain-card, .storytelling__bridge,
+            .program__title, .program__subtitle, .program__card,
+            .modalities__text, .modalities__media img,
+            .authority__title, .authority__credential-item, .testimonial-card, .stat-item,
+            .faq__title, .faq__card,
+            .lead-form__content,
+            .footer__text, .footer__socials, .footer__copyright
+        `);
+
+        // 2. Aplicar la clase inicial oculta a todos
+        elementsToAnimate.forEach((el, index) => {
+            el.classList.add('fade-in-up');
+            
+            // Añadir un pequeño retraso secuencial si son tarjetas o listas
+            if(el.classList.contains('program__card') || 
+               el.classList.contains('testimonial-card') || 
+               el.classList.contains('pain-card') ||
+               el.classList.contains('stat-item') ||
+               el.classList.contains('faq__card')) {
+                // Calcular un delay basado en su posición para efecto cascada
+                const delay = (index % 3) * 150; 
+                el.style.transitionDelay = `${delay}ms`;
+            }
+        });
+
+        // 3. Crear el observador
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px', // Dispara la animación justo antes de entrar
+            threshold: 0.1
+        };
+
+        const scrollObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Solo anima la primera vez que se ve
+                }
+            });
+        }, observerOptions);
+
+        // 4. Observar cada elemento
+        elementsToAnimate.forEach(el => scrollObserver.observe(el));
+    </script>
+</body>
+</html>
