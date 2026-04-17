@@ -315,11 +315,18 @@
         .hero__top-logo {
             position: absolute;
             top: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 1.5rem;
             z-index: 10;
             opacity: 0.7;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        @media (min-width: 992px) {
+            .hero__top-logo {
+                top: 3rem;
+                left: 4rem;
+            }
         }
 
         .hero__top-logo img {
@@ -998,10 +1005,47 @@
         .form__submit {
             width: 100%;
             justify-content: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             border: none;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+            padding: 1.5rem;
+            border-radius: 50px;
+            background: var(--gradient-primary);
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.4s ease;
+            animation: pulseSubmit 2s infinite alternate;
+        }
+
+        @keyframes pulseSubmit {
+            0% { box-shadow: 0 0 20px rgba(176, 38, 255, 0.4), 0 0 40px rgba(0, 240, 255, 0.2); transform: scale(1); }
+            100% { box-shadow: 0 0 35px rgba(176, 38, 255, 0.8), 0 0 60px rgba(0, 240, 255, 0.6); transform: scale(1.02); }
+        }
+
+        .form__submit::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #33f3ff 0%, #c55cff 100%);
+            z-index: -1;
+            transition: opacity 0.4s ease;
+            opacity: 0;
+        }
+
+        .form__submit:hover {
+            transform: translateY(-5px) scale(1.04);
+            animation-play-state: paused;
+            box-shadow: 0 15px 40px rgba(176, 38, 255, 0.9), 0 0 80px rgba(0, 240, 255, 0.7);
+        }
+
+        .form__submit:hover::before {
+            opacity: 1;
         }
 
         .form__trust {
@@ -1204,9 +1248,9 @@
 
     <!-- 1. HERO -->
     <header class="hero" id="hero-section">
-        <div class="hero__top-logo" style="animation: fadeIn 1s ease forwards;">
+        <a href="https://dnamusic.edu.co/" target="_blank" rel="noopener noreferrer" class="hero__top-logo" style="animation: fadeIn 1s ease forwards;">
             <img src="./logo.png" alt="DNA Music Logo">
-        </div>
+        </a>
         <canvas id="particles-canvas" class="hero__particles"></canvas>
         <div class="hero__container">
             <div class="hero__content">
